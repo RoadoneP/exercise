@@ -178,17 +178,22 @@ body:before
         background-position: 0 1080px;
     }
 }
-.star
-{
+.star {
     position:fixed;
-    bottom:460px;
-    width:100px;
-    height:100px;
-    background:rgba(0,0,0,0);
-    background-image: -webkit-linear-gradient(top, #f9a004 0%, #e0ac45 50%, #ead698 100%);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    bottom:430px;
+    font-size: 10vmin;
+    color: #ff0;
+    padding: 20px;
+    text-shadow: 1px 1px 18px #FFFF7F,
+    1px 1px 25px #FFFF7F,
+    1px 1px 50px #FFFF7F,
+    1px 1px 100px #FFFF7F,
+    1px 1px 200px #FFFF7F,
+    1px 1px 300px #FFFF7F;
+
     z-index: 1;
 }
+
 .lenhal{
     bottom: 0;
     left: 0;
@@ -289,22 +294,30 @@ body:before
     text-align: center;
     vertical-align: middle;
 }
-
-.neon {
-    font-family: neon;
-    font-size: 9vw;
-    line-height: 9vw;
-    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
-    color: #FED128;
+@import url('http://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+.text1
+{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:100px;
+    color:#ffeb3b;
+    font-weight: 600;
+    text-shadow:0 0 10px #ff8c3b,
+    0 0 40px #ff8c3b,
+    0 0 80px #ff8c3b,
+    0 0 160px #ff8c3b,
+    0 0 240px #ff8c3b;
 }
-
-.flux {
-    font-family: neon;
-    font-size: 9vw;
-    line-height: 9vw;
-    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
-    color: #28D7FE;
+.text2
+{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:100px;
+    color:#28D7FE;
+    font-weight: 600;
+    text-shadow:0 0 10px #1041FF,
+    0 0 40px #1041FF,
+    0 0 80px #1041FF,
+    0 0 160px #1041FF,
+    0 0 240px #1041FF;
 }
-
 
 
