@@ -1,0 +1,106 @@
+<!doctype html>
+<html id="html">
+
+<head>
+    <title>To do my task (ver.Myeongryun)</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" type="image/png" href="icon.png"/>
+    <meta charset="UTF-8"/>
+</head>
+
+<body id="body" class="body">
+
+<svg class="settings-wheel" id="settings-wheel" ... xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1" x="0px" y="0px"
+     viewBox="0 0 100 100"
+     enable-background="new 0 0 100 100"
+     xml:space="preserve">
+		<path d="M84.579,56.107L83,55.196c-1.878-1.084-3-3.026-3-5.196s1.122-4.112,3-5.196l1.579-0.911  c4.307-2.489,5.781-7.986,3.294-12.294l-3-5.197c-2.481-4.299-7.997-5.774-12.294-3.294L71,24.018c-1.879,1.087-4.124,1.085-6,0.001  c-1.878-1.085-3-3.028-3-5.196V17c0-4.963-4.037-9-9-9h-6c-4.963,0-9,4.037-9,9v1.824c0,2.168-1.122,4.11-3,5.196  c-1.878,1.084-4.122,1.085-6-0.001l-1.579-0.911c-4.295-2.48-9.812-1.005-12.294,3.294l-3,5.197  c-2.486,4.308-1.013,9.806,3.294,12.294L17,44.804c1.878,1.084,3,3.026,3,5.196s-1.122,4.112-3,5.196l-1.579,0.911  c-4.307,2.488-5.781,7.986-3.294,12.294l3,5.197c2.483,4.298,8,5.776,12.294,3.294L29,75.982c1.878-1.088,4.122-1.084,6-0.001  c1.878,1.085,3,3.028,3,5.196V83c0,4.963,4.037,9,9,9h6c4.963,0,9-4.037,9-9v-1.824c0-2.168,1.122-4.11,3-5.196  c1.876-1.083,4.121-1.087,6,0.001l1.579,0.911c4.296,2.479,9.813,1.003,12.294-3.294l3-5.197  C90.36,64.093,88.887,58.596,84.579,56.107z M50,65c-8.271,0-15-6.729-15-15s6.729-15,15-15s15,6.729,15,15S58.271,65,50,65z"></path>
+	</svg>
+
+
+<div class="settings" id="settings">
+    <div class="settings-container">
+        <form class="name-input-form" id="name-input-form" action="#">
+            <input class="name-input" type="text" id="name-input" placeholder="Type your name">
+            <button type="submit" class="nameBtn">Add</button>
+        </form>
+
+        <span class="select-theme-title">Please select a personalized theme:</span>
+        <span class="select-theme-subtitle">Themes:</span>
+        <form class="select-theme" id="select-theme" name="select-order">
+            <div class="gallery-container-permanent">
+                <div class="gallery-container-row">
+
+                    <input class="radio-button" value="yellowTheme" type="radio" id="yellowTheme" name="theme" />
+                    <label class="theme-label" for="yellowTheme">
+                        <img src="img/icon/yellowTheme.jpg" class="theme-image" />
+                        Yellow leaves
+                    </label>
+
+                    <input class="radio-button" value="violetTheme" type="radio" id="violetTheme" name="theme" />
+                    <label class="theme-label" for="violetTheme">
+                        <img src="img/icon/violetTheme.jpg" class="theme-image" />
+                        Night view Violet
+                    </label>
+
+
+                    <input class="radio-button" value="brownTheme" type="radio" id="brownTheme" name="theme" />
+                    <label class="theme-label" for="brownTheme">
+                        <img src="img/icon/brownTheme.jpg" class="theme-image" />
+                        Myeongryun Brown
+                    </label>
+                </div>
+            </div>
+
+            <div class="seasonal-themes-section">
+                <div class="seasonal-theme-selector" id="seasonal-theme-selector">
+                </div>
+            </div>
+        </form>
+
+        <div class="optional-settings">
+            <span class="optional-settings-title">Optional: Link to a custom background image:</span>
+            <form class="background-image-url" id="background-image-url" action="#">
+                <input class="url-input" type="text" id="url-input" placeholder="Add custom background url here...">
+                <button type="submit" class="nameBtn">Link</button>
+                <button type="reset" class="nameBtn resetBtn" id="resetBtn">Reset</button>
+            </form>
+            <span class="optional-settings-detail">*Please note that in order for you to upload your own background, you must link directly to the image, not just a page containing the image. Please see <a href="https://sites.google.com/site/picasaresources/Home/Picasa-FAQ/google-photos-1/how-to/how-to-get-a-direct-link-to-an-image">this resource</a> for help.</span>
+        </div>
+    </div>
+</div>
+
+<p><span class="time" id="time"></span></p>
+
+<div class="greeting-and-compliment">
+    <div class="greeting-and-name">
+        <h1><span class="greeting" id="greeting"></span>, <span class="name" id="name"></span></h1>
+    </div>
+    <div class="compliment-container">
+        <h2><span class="compliment" id="compliment"></span></h2>
+    </div>
+</div>
+
+<div class="to-do-list" id="to-do-list">
+    <h2 class="to-do-list-header">To Do Today</h2>
+    <div class="task-list">
+        <ul class="ul-task-list" id="ul-task-list">
+        </ul>
+    </div>
+
+    <div class="input-and-add">
+        <form class="input-and-add-form" id="input-and-add-form" action="#">
+            <input class="task-input" type="text" id="myInput" placeholder="Type a new task">
+            <button type="submit" class="addBtn">Add</button>
+        </form>
+    </div>
+
+</div>
+
+<script src="popup.js"></script>
+
+</body>
+
+</html>

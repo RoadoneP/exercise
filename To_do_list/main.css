@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+html:before {
+    content:"";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color: rgba(51, 51, 51, 0.2);
+}
+
+html{
+    background-size: cover;
+}
+
+body{
+    font-family: 'Proxima Nova', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+a {
+    color: #ffffff;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 2em;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+/* =================================
+  Settings Styles
+==================================== */
+/* 설정 버튼 클릭시 움직임*/
+.settings-wheel{
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: transform 1s;
+    z-index: 3;
+}
+
+.settings-open.settings-wheel{
+    transform: rotate(125deg);
+    transform-origin: 50% 50%;
+}
+
+.settings{
+    opacity: 0;
+    transition: opacity 1s;
+    pointer-events: none;
+    position: absolute;
+}
+.settings-open.settings{
+    opacity: 1;
+    position: fixed;
+    width: 500px;
+    height: 100vh;
+    background-color: rgba(51, 51, 51, 0.8);
+    pointer-events: initial;
+    z-index: 2;
+    overflow: auto;
+}
+/*setting시 여유두기*/
+.settings-container {
+    padding: 60px 0px 0px 20px;
+}
+/*타이핑과 add를 column으로 배치하지 않고 row로 배치*/
+.name-input-form,
+.background-image-url {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0px 0px 0px;
+}
+
+.name-input,
+.url-input {
+    display: block;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 10px 10px 15px;
+    margin: 0px 5px;
+    font-size: 12px;
+    width:385px;
+    height: 30px;
+}
+.name-input:hover,
+.url-input:hover{
+    outline: none;
+    box-shadow: 0 0 3px 3px #4d90fe;
+}
+.nameBtn{
+    display: block;
+    padding: 5px;
+    width: 50px;
+    height: 30px;
+    background: rgba(51, 51, 51, 0.8);
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer; /*커서포인터 바꾸기*/
+    transition: 0.3s;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+}
+/*커서올리면 색바뀌게 하는 것*/
+.nameBtn:hover {
+    background-color: rgba(51, 51, 51, 0.4);
+}
+/* =================================
+  Theme Selection
+====================================*/
+
+.theme-label {
+    font-size: 10px;
+    text-align: center;
+}
+
+/*그림 크기*/
+.select-theme {
+    display: block;
+    width: 220px;
+}
+
+/*Please select 글씨 크기*/
+.select-theme-title,
+.optional-setting-title{
+    font-size: 14px;
+    display: block;
+}
+
+.select-theme-title{
+    padding: 15px 0px 5px 0px;
+}
+
+.select-theme-subtitle{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input.radio-button{
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-image{
+    max-width: 80px;
+    margin: 5px;
+}
+/*배경화면 클릭하면 체크박스에 체크? 변경*/
+input[type="radio"]:checked + .theme-label .theme-image {
+    box-shadow: 0px 0px 2px 3px #4d97f5;
+}
+
+.gallery-container-permanent{
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-container-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.optional-settings {
+    padding: 15px 0px 0px;
+}
+
+/* =================================
+  Optional Settings
+====================================*/
+
+.optional-settings-detail {
+    font-size: 10px;
+    display: block;
+    width: 375px;
+    padding: 10px 0px 0px 0px;
+}
+
+.resetBtn {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+/* ====================================
+    Time Style
+======================================*/
+
+.time {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* =================================
+  Greeting and Name Styles
+==================================== */
+
+.greeting-and-compliment{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 60px 0px 0px 0px;
+}
+
+.greeting-and-name {
+    font-size: 3em;
+    color:#ffffff;
+}
+
+.compliment-container{
+    width: 800px;
+}
+
+.compliment{
+    font-size: 1em;
+}
+
+/* =================================
+  To Do List Styles
+==================================== */
+
+.to-do-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+ul li {
+    width: 600px;
+    cursor: pointer;
+    position: relative;
+    padding: 14px 12px 14px 50px;
+    margin: 0px 15px 0px 0px;
+
+    background: rgba(244,208,63,0.8);
+    font-size: 16px;
+    transition: 0.2s;
+}
+ul li:hover {
+    background-color: rgba(244,208,63, 0.4);
+}
+
+/* x mark */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px 20px;
+}
+
+
+.to-do-list-header{
+    padding: 30px 40px 10px 40px;
+    text-align: center;
+}
+
+
+.to-do-list-header:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.task-list {
+    height: 260px;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+li:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+li:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.input-and-add{
+    margin: 30px 15px 30px 0px;
+}
+
+.input-and-add-form{
+    display: flex;
+}
+
+.task-list {
+    height: 260px;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+.task-input{
+    display: block;
+    width: 485px;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 10px 10px 25px;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.task-input:focus {
+    outline: none;
+    box-shadow: 0 0 3px 3px #4D90FE;
+}
+
+.addBtn{
+    display: block;
+    width: 100px;
+    padding: 10px;
+    height: 45px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    color: #ffffff;
+}
+
+.addBtn:hover {
+    background-color: rgba(244,208,63, 0.4);
+}
+
+
+
+
+/* =================================
+
+
+  Responsive Design
+
+
+====================================*/
+
+@media (max-width: 1199px) {
+    .greeting-and-name {
+        font-size: 1.5em;
+    }
+
+    .compliment {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 899px) {
+    .greeting-and-compliment {
+        padding: 5px 5px 0px;
+    }
+
+    .greeting-and-name {
+        font-size: 2em;
+    }
+
+    .compliment-container {
+        width: 550px;
+    }
+
+    .compliment {
+        font-size: 1em;
+    }
+
+    ul li {
+        width: 500px;
+        transition: 0s;
+    }
+
+    .task-input {
+        width: 440px;
+    }
+
+    .addBtn {
+        width: 60px;
+        transition: 0s;
+    }
+}
+
+@media (max-width: 599px) {
+    .greeting-and-name {
+        font-size: 1.5em;
+    }
+
+    .compliment-container {
+        width: 80%;
+    }
+
+    .compliment {
+        font-size: 1em;
+    }
+
+    ul li {
+        width: 420px;
+        transition: 0s;
+    }
+
+    .task-input {
+        width: 360px;
+    }
+
+    .addBtn {
+        width: 60px;
+        transition: 0s;
+    }
+}
+
+@media (max-width: 420px) {
+    .greeting-and-name {
+        font-size: 1.2em;
+    }
+
+    .compliment-container {
+        width: 80%;
+    }
+
+    .compliment {
+        font-size: 1em;
+    }
+
+    ul li {
+        width: 380px;
+        transition: 0s;
+    }
+
+    .task-input {
+        width: 320px;
+    }
+
+    .addBtn {
+        width: 60px;
+        transition: 0s;
+    }
+}
+/* =================================
+  yellow Theme
+====================================*/
+
+.yellowTheme ul li,
+.yellowTheme .addBtn,
+.yellowTheme .resetBtn {
+    background: rgba(244, 208, 63, 0.8);
+}
+
+.yellowTheme ul li:hover,
+.yellowTheme .addBtn:hover
+.yellowTheme .resetBtn:hover {
+    background: rgba(244, 208, 63, 0.4);
+}
+
+/* =================================
+  Violet Theme
+====================================*/
+
+.violetTheme ul li,
+.violetTheme .addBtn,
+.violetTheme .resetBtn {
+    background: rgba(139, 103, 152, 0.8);
+}
+
+.violetTheme ul li:hover,
+.violetTheme .addBtn:hover
+.violetTheme .resetBtn:hover {
+    background: rgba(139, 103, 152, 0.4);
+}
+
+/* =================================
+  Brown Theme
+====================================*/
+
+.brownTheme ul li,
+.brownTheme .addBtn,
+.brownTheme .resetBtn {
+    background: rgba(112, 81, 50, 0.8);
+}
+
+.brownTheme ul li:hover,
+.brownTheme .addBtn:hover
+.brownTheme .resetBtn:hover {
+    background: rgba(112, 81, 50, 0.4);
+}
