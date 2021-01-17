@@ -475,7 +475,7 @@ li:last-child {
 }
 
 .yellowTheme ul li:hover,
-.yellowTheme .addBtn:hover
+.yellowTheme .addBtn:hover,
 .yellowTheme .resetBtn:hover {
     background: rgba(244, 208, 63, 0.4);
 }
@@ -491,7 +491,7 @@ li:last-child {
 }
 
 .violetTheme ul li:hover,
-.violetTheme .addBtn:hover
+.violetTheme .addBtn:hover,
 .violetTheme .resetBtn:hover {
     background: rgba(139, 103, 152, 0.4);
 }
@@ -507,7 +507,7 @@ li:last-child {
 }
 
 .brownTheme ul li:hover,
-.brownTheme .addBtn:hover
+.brownTheme .addBtn:hover,
 .brownTheme .resetBtn:hover {
     background: rgba(112, 81, 50, 0.4);
 }
